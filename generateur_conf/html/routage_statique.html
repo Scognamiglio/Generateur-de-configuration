@@ -1,0 +1,61 @@
+<!--Fait par Tristan Lienard -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>test</title>
+		<link rel="stylesheet" type="text/css" href="routage_statique.css">
+		<script type="text/javascript" src="routage_statique.js"></script>
+	</head>
+	<body>
+		<!-- [no] ip route @logicalnet @netmask (@netdest or int) [distance]-->
+		<fieldset id="field-statique">
+			<p>Rappel format d'une route statique :<br/>[no] ip route @logicalnet @netmask @netdest [distance]</p>
+			<fieldset>
+				<legend>Ajouter une route</legend>
+				<table>
+					<tr>
+						<td>Route par default : 
+							<input type="text" name="addDefaultnetdest" placeholder="@netdest">
+							<input type="text" name="addDefaultdistance" placeholder="distance vide par default">
+							<input type="button" onclick="addRoad('0.0.0.0','0.0.0.0',getValue('addDefaultnetdest'),getValue('addDefaultdistance'))" value="Ajouter"> 
+																						<!--getValue est une fonction contenu dans routage_statique.js  -->
+						</td>
+					</tr>
+					<tr>
+						<td>Route :
+							<input type="text" name="addLogicalnet" placeholder="@logicalnet">
+							<input type="text" name="addNetmask" placeholder="@netmask">
+							<input type="text" name="addNetdest" placeholder="@netdest">
+							<input type="text" name="addDistance" placeholder="distance vide par default">
+							<input type="button" onclick="addRoad(getValue('addLogicalnet'),getValue('addNetmask'),getValue('addNetdest'),getValue('addDistance'))" value="Ajouter">
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+			
+			
+			<fieldset>
+				<legend>Supprimer une route</legend>
+				<table>
+					<tr>
+						<td>Route par default : 
+							<input type="text" name="delDefaultnetdest" placeholder="@netdest">
+							<input type="text" name="delDistance" placeholder="distance vide par default" >
+							<input type="button" onclick="delRoad('0.0.0.0','0.0.0.0',getValue('delDefaultnetdest'),getValue('delDistance'))" value="Ajouter">
+						</td>
+					</tr>
+					<tr>
+						<td>Route :
+							<input type="text" name="delLogicalnet" placeholder="@logicalnet">
+							<input type="text" name="delNetmask" placeholder="@netmask">
+							<input type="text" name="delNetdest" placeholder="@netdest">
+							<input type="text" name="delDistance" placeholder="distance vide par default">
+							<input type="button" onclick="delRoad(getValue('delLogicalnet'),getValue('delNetmask'),getValue('delNetdest'),getValue('delDistance'))" value="Ajouter">
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+		</fieldset>
+	</body>
+</html>

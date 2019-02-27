@@ -1,0 +1,49 @@
+/* Fait par Lucas Borg */
+
+body#Routage-Dynamique-body{
+	font-family: lucida sans;
+}
+.fieldset_main{
+	margin: 20px;
+	padding: 0 10px 10px;
+	border: 1px solid #666;
+	border-radius: 8px;
+	box-shadow: 0 0 10px #666;
+	padding-top: 10px;
+}
+
+.titre_protocole {
+	text-align: left;
+	font-size: 25px;
+	font-style: italic;
+	font-family: calibri;
+	text-decoration: underline;
+}
+
+.fieldset_main_legend{
+	font-size: 25px;
+	margin-bottom: 25px;
+	display: block;
+	text-align: center;
+	
+}
+.fieldset_main{
+	background-image: url('Images/gradient_bleu.jpg');
+	background-size: cover;
+	background-color: #55CFFF;
+	
+}
+.invisible{
+	display: none;
+}
+.visible{
+	display: block;
+	}
+.tab_rd{
+height:8em;
+width:30em;
+}
+
+.formrd{
+width:40em;
+}

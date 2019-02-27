@@ -1,0 +1,116 @@
+<!-- Fait par Lucas Borg avec l'aide de Loïc Scognamiglio -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Routage Dynamique </title>
+		<link rel="stylesheet" href="RoutageDynamique.css" />
+		<script type="text/javascript" src="RoutageDynamique.js"></script>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<fieldset class="fieldset_main">
+		<legend class="fieldset_main_legend"> Configuration routage dynamique </legend>
+		<table>
+			<tr>
+				<td>Sélectionnez un protocole de routage :</td>
+				<td>
+					<select id="selectProtocol" onchange="ChangeP(this.value);">
+						<option value="RIP" selected=""> RIP </option>
+						<option value="OSPF"> OSPF </option>
+						<option value="EIGRP"> EIGRP </option>
+					</select>
+					<button id="Valider" onclick="entrer();"> Sauvegarder </button>
+				</td>
+			</tr>
+		</table>
+		
+		
+		<div id="divRIP" class="visible" name="div">
+			<p class="titre_protocole"> Configuration de RIP :</p>
+			<form id="RIPconfig" class="formrd">
+				<table>
+					<tr>
+						<td colspan="3">
+							<ul>
+								<li>
+									<label id="RIP_input_reseau"> Entrez un réseau : </label>
+									<input type="text" id="RIP_input_network" placeholder="@réseau" name="ip"></input>
+									<input type="button" name="RIP_ajoute_reseau" id="RIP_ajoute_reseau" value="Ajouter" onclick="nreseaux()"></li></input>
+								</li>
+								<li>Version 2 <input type="checkbox" id="RIP_version_2"></input></li>
+								<li>Redistribuer les routes statiques <input type="checkbox" id="RIP_redistribute_static"></input>
+							</ul>
+						</td>
+						<td>
+							<label>Liste des réseaux</label>
+							<textarea class="tab_rd" name="area"></textarea>
+							<input type="button" onclick="dreseaux();" value="Suppr"></input>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		
+		
+		<div id="divOSPF" class="invisible" name="div">
+			<p class="titre_protocole"> Configuration de OSPF :</p>
+			<form class="formrd">
+					<table>
+						<tr>
+							<td>
+								<ul>
+									<li> Process-id : <input type="text" id="OSPF_input_process_id" placeholder="N°PID"></li>
+									<li> Router-id : <input type="text" id="OSPF_input_router_id"  placeholder="N°RID" style="margin-left:0.6em"></li>
+									<li> Redistribuer les routes connectées  <input type="checkbox" id="OSPF_redistribute_static"></input></li>
+									<li> Propager la route par défaut  <input type="checkbox" id="OSPF_default_router_originate"></input></li>
+									<li>	
+										<label id="OSPF_input_reseau"> Entrez un réseau : </label>
+										<input type="text" id="OSPF_input_network" name="ip" placeholder="@réseau"></input>
+										<input type="text" id="OSPF_input_netmask" name="msk" placeholder="@masque générique"></input>
+										<input type="text" id="OSPF_input_area_id" name="zone" value="" placeholder="ID de zone"></input>
+										<input type="button" id="OSPF_ajoute_reseau" value="Ajouter" onclick="nreseaux()"></input>
+									</li>
+								</ul>
+							</td>
+							<td>
+							<label>Liste des réseaux</label>
+							<textarea class="tab_rd" name="area"></textarea>
+							<input type="button" onclick="dreseaux();" value="Suppr"></input>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+		
+			<div id="divEIGRP" class="invisible" name="div">
+				<p class="titre_protocole"> Configuration de EIGRP : </p>
+					<form class="formrd">
+						<table>
+							<tr>
+								<td>
+									<ul>
+										<li> Process-id : <input type="text" id="EIGRP_input_process_id" value="" placeholder="N°PID"></input></li>
+										<li> Désactiver le résumé automatique des routes : <input type="checkbox" id="EIGRP_auto_summary"></input></li>
+										<li>	
+											<label id="EIGRP_input_reseau"> Entrez un réseau : </label>
+											<input type="text" id="EIGRP_input_network" name="ip" placeholder="@réseau"></input>
+											<input type="text" id="EIGRP_input_netmask" name="msk" placeholder="@netmask ou générique"></input>
+											<input type="button" id="EIGRP_ajoute_reseau" value="Ajouter" onclick="nreseaux()"></input>
+										</li>
+									</ul>
+								</td>
+								<td>
+									<label>Liste des réseaux</label>
+									<textarea class="tab_rd" name="area"></textarea>
+									<input type="button" onclick="dreseaux();" value="Suppr"></input>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</fieldset>
+	</body>
+</html>

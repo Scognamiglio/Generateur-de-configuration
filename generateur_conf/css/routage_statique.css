@@ -1,0 +1,11 @@
+/* Fait par Tristan Lienard */
+
+#Routage-Statique-body input{
+ 	border-radius: 7px;
+}
+#field-statique{
+	border: dashed;
+ 	border-radius: 7px;
+ 	border-width: thin;
+ 	margin-top: 10px;
+}

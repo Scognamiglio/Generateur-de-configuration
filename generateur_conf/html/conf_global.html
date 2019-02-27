@@ -1,0 +1,38 @@
+<!--Fait par Loïc Scognamiglio -->
+
+<!doctype html> 
+<html lang="fr">
+	<head>
+			<meta charset="utf-8"> 
+			<title>routage</title>
+			<link type="text/css" rel="stylesheet" href="conf_global.css"/>
+			<script src="conf_global.js" type="text/javascript"></script>
+		</head>
+		<body>
+			<fieldset>
+				<legend>Configuration Global</legend>
+				<label>nom du routeur</label><input type="text" name="conf-host"> </br></br>
+
+				<label>Désactiver le recherche de domaine</label>
+					<INPUT type= "checkbox" name="conf-dnl"></br></br>
+					
+				<label>Nom du domaine</label><input type="text" name="conf-NDNS"></br> </br>
+
+				<label>mot de passe privilégié</label><input type="text" name="conf-mdp-ena">
+					<INPUT type= "checkbox" name="conf-crypt-ena"> secret </br></br>
+
+				<label>mot de passe routeur</label><input type="text" name="conf-mdp_routeur"></br> </br>
+
+				<label>mot de passe telnet</label><input type="text" name="conf-mdp_telnet"></br> </br>
+
+				<label>temps avant veille </label><input type="number" name="conf-exec-timeout_m" id="conf-exec">m
+												  <input type="number" name="conf-exec-timeout_s" id="conf-exec">s
+												  <INPUT type= "checkbox" name="veille">Activer la veille</br></br>
+												  
+				<label>cacher les mots de passes</label> <INPUT type= "checkbox" name="conf-encry" value="on"></br></br>
+
+					
+				<button onClick="envoig()">Sauvegarder</button> 
+			</fieldset>
+	</body>
+</html>

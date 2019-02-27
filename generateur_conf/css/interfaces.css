@@ -1,0 +1,93 @@
+/* Fait par Sylvain Meunier */
+
+/* Champs de formulaire, correspond à une interface */
+fieldset.int {
+	margin:1em;
+	border: black solid 0.2em;
+	padding:0.5em;
+}
+fieldset.int label,input{
+	margin-top:0.5em;
+}
+
+/*Zone de sélection du nom de l'interface*/
+#int_select {
+	font-size:1em;
+	text-shadow:#666 0.1em 0.1em 0.3em;
+	margin:-0.5em;
+	padding:0.4em;
+	font-weight:bold;
+}
+#int_select select, #int_select option, #int_select input {
+	font-size:1em;
+	text-shadow:#666 0.1em 0.1em 0.3em;
+	margin: 0;
+	font-weight:bold;
+
+	padding-top: 0.1em;
+	padding-bottom: 0.1em;
+	padding-left: 0.2em;
+	border: 1px outset gray;
+	border-radius: 0.6em;
+}
+#int_select input[type=number]{
+	width: 2em;
+	height: 1.6em;
+}
+
+/* Gestion des couleurs de la zone de sélection du nom de l'interface */
+#int_select.int_green, #int_select.int_green select, #int_select.int_green input, option.int_green{
+	background-color:#99ff99;
+}
+#int_select.int_blue, #int_select.int_blue select, #int_select.int_blue input, option.int_blue{
+	background-color:#66a3ff;
+}
+#int_select.int_red, #int_select.int_red select, #int_select.int_red input, option.int_red{
+	background-color:#ff9999;
+}
+#int_select.int_white, #int_select.int_white select, #int_select.int_white input, option.int_white{
+	background-color:#ffffff;
+}
+#int_select.int_cyan, #int_select.int_cyan select, #int_select.int_cyan input, option.int_cyan{
+	background-color:#00ccff;
+}
+#int_select.int_purple, #int_select.int_purple select, #int_select.int_purple input, option.int_purple{
+	background-color:#c299ff;
+}
+
+/* Gestion des textes avant chaque champs "input" et "select" */
+label.int_title{
+	font-weight: initial;
+	text-shadow: initial;
+	font-size: 1.3em;
+
+	position: relative;
+	top: 0.05em;
+}
+
+/* RAPPEL, exemples syntaxe CSS
+
+label 
+	Balise html (label) à modifier
+
+.int_title 
+	Nom de "class" assigné aux balises html à modifier
+
+#int_select 
+	Id d'une balise html à modifier
+
+
+label.int_title
+	Modifie les balises "label" appartenant à la class "int_title"
+
+fieldset label 
+	Modifie les balises "label" se trouvant dans les balises "fieldset"
+
+fieldset,label 
+	Modifie les balises "fieldset" et "label"
+
+#int_select.int_green, #int_select.int_green select 
+	Modifie les balises html ayant l'id "int_select" et la class "int_green" 
+	ainsi que les balises "select" se trouvant dans les balises html ayant l'id "int_select" et la class "int_green"
+
+*/
